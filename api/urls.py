@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import add_product,delete, get_product,get_products,get_by_name,get_color,get_date,get_price,get_endWith,get_brend,do_updates
+from .views import add_product,delete, get_product,get_products,get_by_name,get_color,get_date,get_price,get_endWith,get_brend,do_updates,get_by_brend_all
 urlpatterns = [
     path("add/",add_product),
     path("delete/<int:pk>",delete),
@@ -11,5 +11,6 @@ urlpatterns = [
     path("getdate/<int:pk>",get_date),
     path("getend/<str:pk>",get_endWith),
     path("getbrend/",get_brend),
-    path("update/<int:pk>",do_updates)
+    path("update/<int:pk>",do_updates),
+    path("<str:pk>/all",get_by_brend_all)
 ]

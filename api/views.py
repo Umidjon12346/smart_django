@@ -127,5 +127,10 @@ def get_brend(request:HttpRequest):
         if a["model"] not in data:
             data.append(a["model"])
     return JsonResponse(data,safe=False)
-
+def get_by_brend_all(requests:HttpRequest,pk):
+    model = Smartphones.objects.filter(model = pk)
+    data = []
+    for i in model:
+        data.append(i.to_dict())
+    return JsonResponse(data,safe=False)
             
