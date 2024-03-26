@@ -133,4 +133,6 @@ def get_by_brend_all(requests:HttpRequest,pk):
     for i in model:
         data.append(i.to_dict())
     return JsonResponse(data,safe=False)
+
+    
             
